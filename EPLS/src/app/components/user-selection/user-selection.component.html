@@ -1,1 +1,11 @@
-<p>user-selection works!</p>
+<mat-form-field>
+  <mat-label>Select a user</mat-label>
+  <mat-select [(value)]="currentUser">
+    <mat-option disabled>
+      Select an option
+    </mat-option>
+    <mat-option *ngFor="let user of users" [value]="user._id" (click)="homePage(user)">
+      {{user.username}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
