@@ -9,14 +9,14 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   public async getUsers() {
-    try{
-      let response:any = await this.http
-        .get("http://localhost:8080/api/users")
+    try {
+      const response: any = await this.http
+        .get('http://localhost:8080/api/users')
         .toPromise();
       return response;
-    }catch (e) {
+    } catch (e) {
       await console.log(e);
-      return {}
+      return {};
     }
   }
 

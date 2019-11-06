@@ -10,22 +10,20 @@ import { Router, ParamMap } from '@angular/router';
 })
 export class UserSelectionComponent implements OnInit {
   currentUser;
-  users=[];
+  users = [];
   constructor(private usersService: UsersService,
               private router: Router) {
-    this.usersService.getUsers().then(res=>{
+    this.usersService.getUsers().then(res => {
       console.log(res);
-      this.users=res;
-    })
+      this.users = res;
+    });
   }
 
-  homePage(user){
+  homePage(user) {
     console.log(user)
-    this.router.navigateByUrl('/teams')
-
+    this.router.navigateByUrl('/teams');
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

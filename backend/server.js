@@ -1,11 +1,13 @@
 // BASE SETUP
 // =============================================================================
+const config = require('./config/env.js');
 
 // call the packages we need
 var express    = require('express');
 var bodyParser = require('body-parser');
 var app        = express();
 var morgan     = require('morgan');
+var footyAPI   = require('./app/functions/footballAPI')
 
 // configure app
 app.use(morgan('dev')); // log requests to the console
@@ -18,7 +20,7 @@ var port     = process.env.PORT || 8080; // set our port
 
 // DATABASE SETUP
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://localhost:27017'); // connect to our database
+mongoose.connect(config.database.url, config.database.options)
 
 // Handle the connection event
 var db = mongoose.connection;
@@ -27,6 +29,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log("DB connection alive");
 });
+
+footyAPI.populateNewDB();
 
 
 // ROUTES FOR OUR API
@@ -39,6 +43,7 @@ var router = express.Router();
 router.use(function(req, res, next) {
 	// do logging
 	console.log('Something is happening.');
+	footyAPI.createUpdateLoop();
 	next();
 });
 
