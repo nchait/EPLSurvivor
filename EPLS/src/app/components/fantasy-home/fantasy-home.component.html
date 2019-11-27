@@ -1,0 +1,18 @@
+<app-fantasy></app-fantasy>
+<mat-card class="col-xs-12 col-sm-offset-1 col-sm-10">
+  <mat-card-header>
+    <mat-card-title>Your Leagues</mat-card-title>
+  </mat-card-header>
+  <mat-card *ngFor="let league of myLeagues"
+            class="col-xs-6 col-sm-4 col-md-3 col-lg-2 example-card">
+    <mat-card-header>
+      <mat-card-title>{{league.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://www.jing.fm/clipimg/full/6-67264_home-graphic-transparent-trophy-black-and-white-clip.png" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        Stats go here?
+      </p>
+    </mat-card-content>
+  </mat-card>
+</mat-card>

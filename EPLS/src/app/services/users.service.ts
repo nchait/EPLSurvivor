@@ -5,8 +5,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersService {
-
-  constructor(private http: HttpClient) { }
+  userId;
+  constructor(private http: HttpClient) {
+    this.userId = localStorage.getItem('userId');
+  }
 
   public async getUsers() {
     try {
@@ -18,6 +20,13 @@ export class UsersService {
       await console.log(e);
       return {};
     }
+  }
+  public setUser(userId) {
+    localStorage.setItem('userId', userId);
+    this.userId = userId;
+  }
+  public getUser() {
+    return this.userId;
   }
 
 }

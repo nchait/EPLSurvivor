@@ -4,7 +4,7 @@ var Team    = require('../models/Teams'),
     Fixture = require('../models/Fixtures'),
     Log     = require('../models/Logs'),
     headers = {
-        "X-RapidAPI-Key": "28cce555cef6d1a66ab35dbad7e279ca",
+        "X-RapidAPI-Key": config.footballAPIKey,
         Accept:"application/json"
     };
 module.exports.populateNewDB = async function () {

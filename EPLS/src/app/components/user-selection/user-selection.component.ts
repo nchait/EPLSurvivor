@@ -14,13 +14,13 @@ export class UserSelectionComponent implements OnInit {
   constructor(private usersService: UsersService,
               private router: Router) {
     this.usersService.getUsers().then(res => {
-      console.log(res);
       this.users = res;
     });
+    this.currentUser = this.usersService.getUser();
   }
 
   homePage(user) {
-    console.log(user)
+    this.usersService.setUser(user._id);
     this.router.navigateByUrl('/teams');
   }
 

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 import {
   MatSliderModule, MatSnackBarModule, MatSlideToggleModule, MatRadioModule, MatExpansionModule,
-  MatInputModule, MatFormFieldModule, MatSidenavModule, MatButtonModule, MatCheckboxModule,
+  MatInputModule, MatFormFieldModule, MatSidenavModule, MatCheckboxModule,
   MatIconModule, MatDialogModule, MatTooltipModule, MatTabsModule, MatNativeDateModule,
   MatDatepickerModule, MatSelectModule, MatButtonToggleModule, MatDividerModule
 } from '@angular/material';
@@ -14,13 +17,17 @@ import {
     DragDropModule,
     MatSliderModule, MatSnackBarModule, MatSlideToggleModule, MatRadioModule, MatExpansionModule,
     MatInputModule, MatFormFieldModule, MatSidenavModule, MatButtonModule, MatCheckboxModule,
-    MatIconModule, MatDialogModule, MatTooltipModule, MatTabsModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule, MatButtonToggleModule, MatDividerModule
+    MatIconModule, MatDialogModule, MatTooltipModule, MatTabsModule, MatNativeDateModule,
+    MatDatepickerModule, MatSelectModule, MatButtonToggleModule, MatDividerModule,
+    MatCardModule
   ],
   exports: [
     DragDropModule,
     MatSliderModule, MatSnackBarModule, MatSlideToggleModule, MatRadioModule, MatExpansionModule,
     MatInputModule, MatFormFieldModule, MatSidenavModule, MatButtonModule, MatCheckboxModule,
-    MatIconModule, MatDialogModule, MatTooltipModule, MatTabsModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule, MatButtonToggleModule, MatDividerModule
+    MatIconModule, MatDialogModule, MatTooltipModule, MatTabsModule, MatNativeDateModule,
+    MatDatepickerModule, MatSelectModule, MatButtonToggleModule, MatDividerModule,
+    MatCardModule
   ],
 })
 export class MaterialModule { }

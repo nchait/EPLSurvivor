@@ -48,15 +48,13 @@ router.use(function(req, res, next) {
 });
 
 var teamRoutes = require('./app/routes/teams'),
+	LeagueRoutes = require('./app/routes/leagues'),
 	userRoutes = require('./app/routes/users');
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router
-	.get('/', function(req, res) {
-		res.json({ message: 'hooray! welcome to our api!' });
-	})
-
 	.use('/teams', teamRoutes)
+	.use('/leagues', LeagueRoutes)
 	.use('/users', userRoutes);
 
 

@@ -1,10 +1,13 @@
 var express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    Subscription = require('../models/Subscriptions'),
+    League  = require('../models/Leagues'),
+    Team    = require('../models/Teams');
 
-router
-// Add a binding for '/tests/automated/'
-    .get('/', function(req, res){
-        res.json({message:"hello world"})
+router.route('/epl')
+    .get(async function(req, res){
+        let teams = await Team.find({}).lean();
+        res.json({teams:teams})
     });
 
 module.exports = router;
